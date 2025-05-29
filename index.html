@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peshawa Barznji - Kurdish YouTube Channel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1159C3;
+            --primary-dark: #0d47a1;
+            --secondary: #ff4d4d;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --kurdish-red: #d80027;
+            --kurdish-green: #009966;
+            --kurdish-yellow: #ffde00;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f0f4f8;
+            color: var(--dark);
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.8) 0%, rgba(240,244,248,0.9) 100%);
+            z-index: -1;
+        }
+        
+        /* Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 5%;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .logo-text span {
+            color: var(--kurdish-red);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin: 0 1.2rem;
+        }
+        
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Section Common Styles */
+        section {
+            padding: 6rem 5%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--kurdish-red), var(--kurdish-yellow), var(--kurdish-green));
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.7;
+        }
+        
+        /* Welcome Section */
+        #welcome {
+            background: linear-gradient(135deg, rgba(17,89,195,0.1) 0%, rgba(255,255,255,0.8) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .welcome-content {
+            max-width: 900px;
+            z-index: 2;
+        }
+        
+        .welcome-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .welcome-subtitle {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+        }
+        
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .kurdish-flag {
+            display: inline-flex;
+            margin: 2rem 0;
+        }
+        
+        .flag-stripe {
+            width: -250px;
+            height: -50px;
+            margin: 0 2px;
+        }
+        
+        .red { background-color: var(--kurdish-red); }
+        .white { background-color: white; border: 1px solid #ddd; }
+        .green { background-color: var(--kurdish-green); }
+        .yellow { background-color: var(--kurdish-yellow); }
+        
+        /* About Section */
+        #about {
+            background-color: white;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            max-width: 1200px;
+            margin-top: 2rem;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-text {
+            flex: 1;
+            text-align: left;
+        }
+        
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+        }
+        
+        .stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: var(--gray);
+        }
+        
+        /* Live Section */
+        #live {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+        }
+        
+        .live-container {
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .live-status {
+            display: inline-block;
+            padding: 0.8rem 2.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            border-radius: 50px;
+            margin: 1.5rem 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .live-on {
+            background: var(--secondary);
+            color: white;
+            animation: pulse 1.5s infinite;
+        }
+        
+        .live-off {
+            background: rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .live-info {
+            font-size: 1.2rem;
+            margin: 1.5rem 0;
+            line-height: 1.8;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--secondary);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255,77,77,0.4);
+        }
+        
+        .btn:hover {
+            background: #ff3333;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255,77,77,0.6);
+        }
+        
+        /* Videos Section */
+        #videos {
+            background-color: #f8fafc;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin-top: 2rem;
+        }
+
+        .video-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-thumb img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .video-content {
+            padding: 15px;
+            flex-grow: 1;
+        }
+
+        .video-title {
+            font-size: 1rem;
+            margin: 0 0 8px;
+        }
+
+        .video-desc {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.4;
+        }
+
+
+        
+        /* Social Media Section */
+        #social {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        
+        .social-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .social-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .youtube { background: #ff0000; }
+        .facebook { background: #3b5998; }
+        .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .twitter { background: #1da1f2; }
+        .tiktok { background: #000000; }
+        
+        .social-handle {
+            display: block;
+            margin-top: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        
+        .footer-logo span {
+            color: var(--primary);
+        }
+        
+        .copyright {
+            font-size: 1.1rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .agency {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        /* Animations */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 77, 77, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 77, 77, 0); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .about-text {
+                text-align: center;
+            }
+            
+            .stats {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .logo {
+                margin-bottom: 1rem;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 0.5rem;
+            }
+            
+            .welcome-title {
+                font-size: 2.5rem;
+            }
+            
+            .welcome-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        #sponsors {
+            padding: 60px 5%;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .sponsor-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .sponsor-logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            transition: transform 0.3s ease;
+        }
+
+        .sponsor-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .sponsor-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <!-- Logo placeholder - in real use, replace with actual logo.png -->
+            <div style="width: 40px; height: 40px; background: var(--dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: bold;"><img  src="logo.png"></div>
+            <div class="logo-text">Peshawa <span>Barznji</span></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#welcome">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#live">Live</a></li>
+            <li><a href="#videos">Videos</a></li>
+            <li><a href="#social">Social Media</a></li>
+        </ul>
+    </nav>
+
+    <!-- Welcome Section -->
+    <section id="welcome">
+        <div class="welcome-content">
+            <h1 class="welcome-title">Welcome to Peshawa Barznji</h1>
+            <p class="welcome-subtitle">Kurdish YouTube Star | Content Creator | PlayVerse</p>
+            
+            <div class="kurdish-flag">
+                <div class="flag-stripe "><img src="kurdistan.png"></div>
+
+            </div>
+            
+            <p style="font-size: 1.3rem; max-width: 700px; line-height: 1.8; margin-top: 1rem;">
+                Join me on a journey through Game, Vlog, and having a good time. Subscribe to my channel for the latest videos!
+            </p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Peshawa Barznji</h2>
+        <p class="section-subtitle">Learn about the man behind the channel and his journey as a Kurdish content creator</p>
+        
+        <div class="about-content">
+            <div class="about-image">
+                <!-- Placeholder for image -->
+                <div style="width: 100%; height: 400px; background: linear-gradient(45deg, var(--primary), var(--primary-dark)); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                    <img src="peshwa_barznji.png" alt="Peshawa Barznji" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                </div>
+            </div>
+            <div class="about-text">
+                <h3>The Voice of Kurdish YouTube</h3>
+                <p>Peshawa Barznji is a prominent Kurdish YouTuber from Sulaymaniyah, Kurdistan, known for his engaging gaming content and vlogs. He began his YouTube journey on June 29, 2013, and uploaded his first gaming video, a fan-made Uncharted remix, on July 14, 2016.
+
+His channel features a diverse range of gameplay videos, including popular titles like Minecraft, God of War, The Last of Us Part II, Marvel's Spider-Man: Miles Morales, and Red Dead Redemption. Peshawa is recognized for his family-friendly content, where he often translates game dialogues into Kurdish, making them accessible to a broader audience.</p>
+                
+                <p>Over the years, his channel has amassed over 1 million subscribers and more than 352 million views, reflecting his significant impact in the gaming community. Notably, his "Hello Neighbor" series has garnered over 900,000 views per video. His dedication to producing quality content in the Kurdish language has not only entertained but also fostered a sense of community among Kurdish-speaking gamers worldwide.</p>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">1M+</div>
+                        <div class="stat-label">Subscribers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">352M+</div>
+                        <div class="stat-label">Views</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2.9K+</div>
+                        <div class="stat-label">Videos</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Section -->
+    <section id="live">
+        <h2 class="section-title" style="color: white;">Live Stream</h2>
+        <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Check my current live status and join the conversation</p>
+        
+        <div class="live-container">
+            <div class="live-status live-on">Live Now!</div>
+            <h3 style="font-size: 2rem; margin: 1.5rem 0;">Discussing Kurdish Gaming  & Storytelling</h3>
+            
+            <p class="live-info">Embark on epic adventures through Kurdish storytelling and immersive gameplay.</p>
+            
+            <p class="live-info">Stream started: Today at 20:00 (GMT+3)</p>
+            
+            <a href="#" class="btn">
+                <i class="fab fa-youtube"></i> Watch Live on YouTube
+            </a>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos">
+    <h2 class="section-title">Popular Videos</h2>
+    <p class="section-subtitle">Check out some of my most popular content</p>
+    
+    <div class="video-grid">
+
+        <div class="video-card">
+            <div class="video-thumb">
+                <a href="https://www.youtube.com/watch?v=5RqnhzbCkfI" target="_blank">
+                    <img src="https://img.youtube.com/vi/5RqnhzbCkfI/hqdefault.jpg" alt="Spider-Man 2 Kurdish Gameplay">
+                </a>
+            </div>
+            <div class="video-content">
+                <h3 class="video-title">Spider-Man 2 Kurdish Gameplay</h3>
+                <p class="video-desc">Join Peshawa as he swings through NYC in Kurdish – full gameplay with voiceover.</p>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-thumb">
+                <a href="https://www.youtube.com/watch?v=cUItnTe_QKk" target="_blank">
+                    <img src="https://img.youtube.com/vi/cUItnTe_QKk/hqdefault.jpg" alt="The Last of Us Part 2 in Kurdish">
+                </a>
+            </div>
+            <div class="video-content">
+                <h3 class="video-title">The Last of Us Part II</h3>
+                <p class="video-desc">Watch this emotional story unfold in Kurdish with Peshawa's voiceover and commentary.</p>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-thumb">
+                <a href="https://www.youtube.com/watch?v=quMAwhZt62s" target="_blank">
+                    <img src="https://img.youtube.com/vi/quMAwhZt62s/hqdefault.jpg" alt="Resident Evil 4 Kurdish Walkthrough">
+                </a>
+            </div>
+            <div class="video-content">
+                <h3 class="video-title">Resident Evil 4 – Kurdish</h3>
+                <p class="video-desc">Experience the horror and action of RE4 with Kurdish gameplay by Peshawa.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+    <section id="sponsors">
+        <h2 class="section-title">Our Sponsors</h2>
+        <p class="section-subtitle">Thanks to our amazing partners</p>
+
+        <div class="sponsor-logos">
+            <div class="sponsor-logo">
+                <img src="sponsor1.png" alt="Sponsor 1">
+            </div>
+            <div class="sponsor-logo">
+                <img src="sponsor2.png" alt="Sponsor 2">
+            </div>
+            <div class="sponsor-logo">
+                <img src="sponsor3.png" alt="Sponsor 3">
+            </div>
+            <!-- Add more logos as needed -->
+        </div>
+    </section>
+
+
+    <!-- Social Media Section -->
+    <section id="social">
+        <h2 class="section-title">Connect With Me</h2>
+        <p class="section-subtitle">Follow me on social media for daily updates and behind-the-scenes content</p>
+        
+        <div class="social-container">
+            <div class="social-icons">
+                <a href="#" class="social-icon youtube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="#" class="social-icon facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-icon instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-icon twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-icon tiktok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+            
+            <p style="margin-top: 3rem; font-size: 1.2rem; color: var(--gray);">
+                Stay updated with my latest content across all platforms!
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Peshawa <span>Barznji</span></div>
+            <p>Live Kurdish Gaming & Storytelling with Peshawa Barznji.</p>
+            
+            <div class="copyright">
+                Created by <span class="agency">GrowthNexus</span><br>
+                &copy; 2025 Peshawa Barznji. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+                navbar.style.padding = '0.8rem 5%';
+            } else {
+                navbar.style.boxShadow = '0 2px 15px rgba(0,0,0,0.1)';
+                navbar.style.padding = '1rem 5%';
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Live status simulation
+        function updateLiveStatus() {
+            const liveStatus = document.querySelector('.live-status');
+            const isLive = Math.random() > 0.5;
+            
+            if (isLive) {
+                liveStatus.textContent = 'Live Now!';
+                liveStatus.className = 'live-status live-on';
+            } else {
+                liveStatus.textContent = 'Currently Offline';
+                liveStatus.className = 'live-status live-off';
+            }
+        }
+        
+        // Update live status every 10 seconds (simulation)
+        setInterval(updateLiveStatus, 10000);
+    </script>
+</body>
+</html>
