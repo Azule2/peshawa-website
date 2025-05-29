@@ -6,6 +6,8 @@
     <title>Peshawa Barznji - Kurdish YouTube Channel</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
         :root {
             --primary: #1159C3;
@@ -572,20 +574,45 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">
-            <!-- Logo placeholder - in real use, replace with actual logo.png -->
-            <div style="width: 40px; height: 40px; background: var(--dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: bold;"><img  src="logo.png"></div>
-            <div class="logo-text">Peshawa <span>Barznji</span></div>
+    <nav class="bg-white fixed top-0 w-full shadow z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <img src="logo.png" alt="Logo" class="h-10 w-10 mr-2 rounded-full">
+            <div class="text-xl font-bold text-blue-700 uppercase">Peshawa <span class="text-red-600">Barznji</span></div>
         </div>
-        <ul class="nav-links">
-            <li><a href="#welcome">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#live">Live</a></li>
-            <li><a href="#videos">Videos</a></li>
-            <li><a href="#social">Social Media</a></li>
+
+        <!-- Hamburger (Mobile) -->
+        <div class="flex md:hidden">
+            <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Nav Links (Desktop) -->
+        <ul class="hidden md:flex space-x-6 text-gray-800 font-medium">
+            <li><a href="#welcome" class="hover:text-blue-700">Home</a></li>
+            <li><a href="#about" class="hover:text-blue-700">About</a></li>
+            <li><a href="#live" class="hover:text-blue-700">Live</a></li>
+            <li><a href="#videos" class="hover:text-blue-700">Videos</a></li>
+            <li><a href="#social" class="hover:text-blue-700">Social Media</a></li>
         </ul>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+        <ul class="flex flex-col space-y-4 text-gray-800 font-medium">
+        <li><a href="#welcome" class="block hover:text-blue-700">Home</a></li>
+        <li><a href="#about" class="block hover:text-blue-700">About</a></li>
+        <li><a href="#live" class="block hover:text-blue-700">Live</a></li>
+        <li><a href="#videos" class="block hover:text-blue-700">Videos</a></li>
+        <li><a href="#social" class="block hover:text-blue-700">Social Media</a></li>
+        </ul>
+    </div>
     </nav>
+
 
     <!-- Welcome Section -->
     <section id="welcome">
@@ -666,45 +693,46 @@ His channel features a diverse range of gameplay videos, including popular title
     <h2 class="section-title">Popular Videos</h2>
     <p class="section-subtitle">Check out some of my most popular content</p>
     
-    <div class="video-grid">
+    <section id="videos" class="bg-gray-50 py-16 px-4 text-center">
+  <h2 class="text-4xl font-bold text-blue-700 mb-4">Popular Videos</h2>
+  <p class="text-lg text-gray-600 mb-10">Check out some of my most popular content</p>
 
-        <div class="video-card">
-            <div class="video-thumb">
-                <a href="https://www.youtube.com/watch?v=5RqnhzbCkfI" target="_blank">
-                    <img src="https://img.youtube.com/vi/5RqnhzbCkfI/hqdefault.jpg" alt="😫ئەمجارە هەتا شتەکانم دۆزییەوە شێت بووم زۆر قورس بوو">
-                </a>
-            </div>
-            <div class="video-content">
-                <h3 class="video-title">😫ئەمجارە هەتا شتەکانم دۆزییەوە شێت بووم زۆر قورس بوو</h3>
-                <p class="video-desc">Join Peshawa as he swings through NYC in Kurdish – full gameplay with voiceover.</p>
-            </div>
-        </div>
-
-        <div class="video-card">
-            <div class="video-thumb">
-                <a href="https://www.youtube.com/watch?v=cUItnTe_QKk" target="_blank">
-                    <img src="https://img.youtube.com/vi/cUItnTe_QKk/hqdefault.jpg" alt="خۆشكه‌زاكه‌م له‌ خۆشیا ده‌ستی كرد به‌ گریان كه‌ بینی 😂😂🤣🤣😍">
-                </a>
-            </div>
-            <div class="video-content">
-                <h3 class="video-title">خۆشكه‌زاكه‌م له‌ خۆشیا ده‌ستی كرد به‌ گریان كه‌ بینی 😂😂🤣🤣😍</h3>
-                <p class="video-desc"> ناوم پێشه‌وایه‌ و له‌م كه‌ناڵه‌ ڤیدیۆی تایبه‌ت به‌ یاری و ڤلۆگ و زانیاری و هه‌مه‌ره‌نگ بڵاو ئه‌كه‌ینه‌وه‌.</p>
-            </div>
-        </div>
-
-        <div class="video-card">
-            <div class="video-thumb">
-                <a href="https://www.youtube.com/watch?v=quMAwhZt62s" target="_blank">
-                    <img src="https://img.youtube.com/vi/quMAwhZt62s/hqdefault.jpg" alt="😂یەک قاپی گەورە چپس کێ زوو بیخوات ئەیباتەوە">
-                </a>
-            </div>
-            <div class="video-content">
-                <h3 class="video-title">😂یەک قاپی گەورە چپس کێ زوو بیخوات ئەیباتەوە</h3>
-                <p class="video-desc">چپسی دانە دانە خۆشترین تام و بەرزترین کوالێتی</p>
-            </div>
-        </div>
-
+  <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+    <!-- Video 1 -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <a href="https://www.youtube.com/watch?v=5RqnhzbCkfI" target="_blank">
+        <img src="https://img.youtube.com/vi/5RqnhzbCkfI/hqdefault.jpg" class="w-full" alt="Video 1">
+      </a>
+      <div class="p-4 text-left">
+        <h3 class="font-semibold text-lg mb-2 text-gray-800">😫ئەمجارە هەتا شتەکانم دۆزییەوە شێت بووم</h3>
+        <p class="text-sm text-gray-600">Join Peshawa as he swings through NYC in Kurdish – full gameplay with voiceover.</p>
+      </div>
     </div>
+
+    <!-- Video 2 -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <a href="https://www.youtube.com/watch?v=cUItnTe_QKk" target="_blank">
+        <img src="https://img.youtube.com/vi/cUItnTe_QKk/hqdefault.jpg" class="w-full" alt="Video 2">
+      </a>
+      <div class="p-4 text-left">
+        <h3 class="font-semibold text-lg mb-2 text-gray-800">خۆشكه‌زاكه‌م له‌ خۆشیا ده‌ستی كرد به‌ گریان</h3>
+        <p class="text-sm text-gray-600">ناوم پێشه‌وایه‌ و ڤیدیۆ تایبه‌ت به‌ یاری و ڤلۆگ بڵاو ئه‌كه‌م.</p>
+      </div>
+    </div>
+
+    <!-- Video 3 -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <a href="https://www.youtube.com/watch?v=quMAwhZt62s" target="_blank">
+        <img src="https://img.youtube.com/vi/quMAwhZt62s/hqdefault.jpg" class="w-full" alt="Video 3">
+      </a>
+      <div class="p-4 text-left">
+        <h3 class="font-semibold text-lg mb-2 text-gray-800">😂یەک قاپی گەورە چپس کێ زوو بیخوات</h3>
+        <p class="text-sm text-gray-600">چپسی دانە دانە خۆشترین تام و بەرزترین کوالێتی</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 </section>
     <section id="sponsors">
         <h2 class="section-title">Our Sponsors</h2>
@@ -808,5 +836,12 @@ His channel features a diverse range of gameplay videos, including popular title
         // Update live status every 10 seconds (simulation)
         setInterval(updateLiveStatus, 10000);
     </script>
+    <script>
+        document.getElementById("menu-toggle").addEventListener("click", function () {
+            const menu = document.getElementById("mobile-menu");
+            menu.classList.toggle("hidden");
+        });
+    </script>
+
 </body>
 </html>
